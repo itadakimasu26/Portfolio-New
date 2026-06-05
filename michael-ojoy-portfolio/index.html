@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael John Ojoy | IT Support & Development Portfolio</title>
+  <meta name="description" content="Modern portfolio for Michael John Ojoy, an IT Support and Support Analyst professional with application support and software development experience." />
+  <meta name="theme-color" content="#f8fbff" />
+  <style>
+    :root {
+      --bg: #f8fbff;
+      --bg-2: #eef6ff;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-2: #ffffff;
+      --line: rgba(15, 23, 42, 0.12);
+      --line-soft: rgba(15, 23, 42, 0.08);
+      --text: #0f172a;
+      --muted: #526174;
+      --muted-2: #64748b;
+      --accent: #059669;
+      --accent-2: #2563eb;
+      --accent-3: #7c3aed;
+      --accent-4: #f59e0b;
+      --accent-5: #dc2626;
+      --warning: #d97706;
+      --radius: 26px;
+      --radius-sm: 18px;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+      --shadow-soft: 0 14px 34px rgba(15, 23, 42, 0.08);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    #contact, #email-michael { scroll-margin-top: 96px; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(37, 99, 235, 0.10), transparent 32rem),
+        radial-gradient(circle at 90% 4%, rgba(5, 150, 105, 0.12), transparent 34rem),
+        linear-gradient(180deg, var(--bg) 0%, #ffffff 46%, var(--bg-2) 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 40px, var(--max)); margin: 0 auto; }
+    .icon { width: 1.12em; height: 1.12em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; display: inline-block; vertical-align: -0.18em; }
+    .icon-fill { fill: currentColor; stroke: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line-soft);
+      backdrop-filter: blur(18px);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 8px 28px rgba(15, 23, 42, 0.05);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.20);
+      font-size: 1.15rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-2);
+      background: rgba(37, 99, 235, 0.08);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font-weight: 900;
+      font-size: 0.94rem;
+      line-height: 1;
+      white-space: nowrap;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent-2), #1d4ed8);
+      box-shadow: 0 18px 44px rgba(37, 99, 235, 0.22);
+    }
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.90);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .hero { padding: 92px 0 56px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #065f46;
+      border: 1px solid rgba(5, 150, 105, 0.20);
+      background: rgba(5, 150, 105, 0.08);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.86rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.78rem, 7vw, 5.85rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #059669 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.1rem;
+      margin: 24px 0 0;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+    .target-roles {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .target-roles-label {
+      color: var(--text);
+      font-weight: 950;
+      font-size: 0.92rem;
+      margin-right: 2px;
+    }
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      background: #ffffff;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-size: 0.86rem;
+      font-weight: 850;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    }
+    .role-pill .icon {
+      width: 16px;
+      height: 16px;
+      color: var(--accent-2);
+    }
+
+
+    .hero-card, .panel, .stat-card, .skill-card, .value-card, .timeline-item, .credential-card, .focus-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius);
+      padding: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 16rem),
+        radial-gradient(circle at bottom left, rgba(5, 150, 105, 0.10), transparent 18rem);
+      pointer-events: none;
+    }
+
+    .profile { position: relative; display: grid; gap: 18px; }
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 31px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 22px 58px rgba(37, 99, 235, 0.18);
+      font-size: 2.55rem;
+    }
+
+    .profile h2 { margin: 0 0 6px; font-size: 1.58rem; letter-spacing: -0.04em; }
+    .profile .role { margin: 0; color: var(--accent-2); font-weight: 950; }
+    .contact-list { display: grid; gap: 10px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 46px;
+      color: var(--muted);
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line-soft);
+      background: rgba(248, 251, 255, 0.78);
+      overflow-wrap: anywhere;
+    }
+    .contact-item .icon { color: var(--accent-2); width: 21px; height: 21px; }
+
+    .mini-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .mini-stat {
+      text-align: center;
+      border-radius: 18px;
+      border: 1px solid var(--line-soft);
+      background: #ffffff;
+      padding: 16px 10px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+    .mini-stat strong { display: block; font-size: 1.42rem; letter-spacing: -0.05em; color: var(--accent-2); }
+    .mini-stat span { color: var(--muted-2); font-size: 0.78rem; font-weight: 800; }
+
+    section { padding: 66px 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.78rem;
+    }
+    h3 {
+      margin: 8px 0 0;
+      font-size: clamp(1.6rem, 3.2vw, 2.45rem);
+      letter-spacing: 0.02em;
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+    .section-copy { max-width: 600px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .stat-card {
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      min-height: 178px;
+      background: #ffffff;
+    }
+    .stat-card:nth-child(1) .icon { color: var(--accent-2); }
+    .stat-card:nth-child(2) .icon { color: var(--accent); }
+    .stat-card:nth-child(3) .icon { color: var(--accent-3); }
+    .stat-card:nth-child(4) .icon { color: var(--accent-4); }
+    .stat-card .icon { width: 26px; height: 26px; }
+    .stat-card strong { display: block; margin-top: 16px; font-size: 1.35rem; letter-spacing: -0.04em; }
+    .stat-card span { display: block; margin-top: 7px; color: var(--muted); line-height: 1.5; font-size: 0.94rem; }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .focus-card {
+      border-radius: var(--radius-sm);
+      padding: 25px;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .focus-card::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      top: -42px;
+      width: 140px;
+      height: 140px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+    }
+    .focus-card:nth-child(1) .icon { color: var(--accent-5); }
+    .focus-card:nth-child(2) .icon { color: var(--accent-2); }
+    .focus-card:nth-child(3) .icon { color: var(--accent); }
+    .focus-card .icon { width: 30px; height: 30px; }
+    .focus-card h4 { margin: 18px 0 10px; font-size: 1.24rem; letter-spacing: -0.04em; }
+    .focus-card p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .skill-card {
+      border-radius: var(--radius-sm);
+      min-height: 132px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 180ms ease;
+      background: #ffffff;
+    }
+    .skill-card:hover { transform: translateY(-5px); background: #fbfdff; box-shadow: var(--shadow); }
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(37, 99, 235, 0.08);
+    }
+    .skill-card:nth-child(5n+1) .skill-icon { color: var(--accent-2); background: rgba(37, 99, 235, 0.09); }
+    .skill-card:nth-child(5n+2) .skill-icon { color: var(--accent-5); background: rgba(220, 38, 38, 0.08); }
+    .skill-card:nth-child(5n+3) .skill-icon { color: var(--accent); background: rgba(5, 150, 105, 0.09); }
+    .skill-card:nth-child(5n+4) .skill-icon { color: var(--accent-3); background: rgba(124, 58, 237, 0.08); }
+    .skill-card:nth-child(5n+5) .skill-icon { color: var(--accent-4); background: rgba(245, 158, 11, 0.10); }
+    .skill-icon .icon { width: 25px; height: 25px; }
+    .skill-card h4 { margin: 14px 0 5px; letter-spacing: -0.03em; }
+    .skill-card p { margin: 0; color: var(--muted-2); font-size: 0.86rem; line-height: 1.45; }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 22px;
+      background: #ffffff;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent-2), var(--accent));
+    }
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-2);
+      font-weight: 950;
+      font-size: 0.86rem;
+    }
+    .date-pill .icon { width: 18px; height: 18px; }
+    .job h4 { margin: 0; font-size: 1.2rem; letter-spacing: -0.03em; }
+    .company { margin: 6px 0 12px; color: var(--accent); font-weight: 850; }
+    .job ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.72; }
+
+    .credential-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .panel {
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      background: #ffffff;
+    }
+    .panel-title {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 18px;
+      font-size: 1.18rem;
+      letter-spacing: -0.04em;
+    }
+    .panel-title .icon { color: var(--accent-2); width: 24px; height: 24px; }
+    .credential-list { display: grid; gap: 14px; }
+    .credential-card {
+      border-radius: 17px;
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #f8fbff;
+      box-shadow: none;
+    }
+    .credential-card .icon-box {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      flex: 0 0 auto;
+    }
+    .credential-card:nth-child(1) .icon-box { color: var(--accent-2); background: rgba(37, 99, 235, 0.09); }
+    .credential-card:nth-child(2) .icon-box { color: var(--accent); background: rgba(5, 150, 105, 0.09); }
+    .credential-card .icon { width: 23px; height: 23px; }
+    .credential-card h4 { margin: 0 0 6px; letter-spacing: -0.03em; }
+    .credential-card p { margin: 0; color: var(--muted); line-height: 1.55; }
+
+    .tech-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 10px 12px;
+      color: var(--muted);
+      border: 1px solid var(--line-soft);
+      background: #f8fbff;
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+    .chip:nth-child(5n+1) .icon { color: var(--accent-2); }
+    .chip:nth-child(5n+2) .icon { color: var(--accent-5); }
+    .chip:nth-child(5n+3) .icon { color: var(--accent); }
+    .chip:nth-child(5n+4) .icon { color: var(--accent-3); }
+    .chip:nth-child(5n+5) .icon { color: var(--accent-4); }
+    .chip .icon { width: 17px; height: 17px; }
+
+    .cta { padding: 82px 0; }
+    .cta-card {
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.11), transparent 22rem),
+        linear-gradient(135deg, #ffffff, #f8fbff);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 26px;
+      align-items: center;
+    }
+    .cta h3 { margin: 0 0 12px; }
+    .cta-title {
+      text-transform: none;
+      letter-spacing: -0.03em;
+      font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+      line-height: 1.08;
+    }
+    .cta p { color: var(--muted); line-height: 1.7; margin: 0; max-width: 760px; }
+
+    footer {
+      text-align: center;
+      color: var(--muted-2);
+      border-top: 1px solid var(--line-soft);
+      padding: 28px 0;
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+    .fade-up.show { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      .btn:hover, .skill-card:hover { transform: none; }
+    }
+
+    @media (max-width: 1000px) {
+      .hero-grid, .cta-card, .credential-layout { grid-template-columns: 1fr; }
+      .stats-grid, .skills-wrap { grid-template-columns: repeat(2, 1fr); }
+      .focus-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 580px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .hero { padding-top: 56px; }
+      .stats-grid, .skills-wrap, .mini-stack { grid-template-columns: 1fr; }
+      .hero-actions { width: 100%; }
+      .btn { width: 100%; }
+      .cta-card { padding: 28px; }
+      .nav-inner .btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Michael John Ojoy home">
+        <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17l6-5-6-5"/><path d="M12 19h8"/></svg></span>
+        <span>Michael John Ojoy</span>
+      </a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="#focus">Focus</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-primary" href="#email-michael"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Hire Me</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="fade-up">
+          <div class="eyebrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg> IT Support • Application Support • Development</div>
+          <h1><span class="gradient-text">Reliable IT Support</span><br />with developer-level problem solving.</h1>
+          <p class="hero-copy">
+            I help teams keep users, business applications, and infrastructure running smoothly. With 7+ years across enterprise IT support, application support, software troubleshooting, incident management, and client-facing support, I bring technical depth with strong service ownership.
+          </p>
+          <div class="target-roles" aria-label="Target roles">
+            <span class="target-roles-label">Open to:</span>
+            <span class="role-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-8H6a2 2 0 0 0-2 2z"/><path d="M20 13v4a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2z"/></svg> IT Support Specialist</span>
+            <span class="role-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg> Application Support Analyst</span>
+            <span class="role-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><path d="M14 4l-4 16"/></svg> Technical Support Engineer</span>
+            <span class="role-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z"/></svg> Software Support</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#email-michael"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M22 7l-10 6L2 7"/></svg> Contact Me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/michael-john-ojoy-11b13116b" target="_blank" rel="noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="hero-card fade-up" aria-label="Profile summary card">
+          <div class="profile">
+<div class="profile-intro">
+              <h2>Michael John Ojoy</h2>
+              <p class="role">Support Analyst / IT Support Specialist</p>
+            </div>
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:michaeljohnojoy26@gmail.com?subject=Job%20Opportunity%20for%20Michael%20John%20Ojoy&body=Hi%20Michael%2C%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20IT%20Support%20%2F%20Development%20opportunity.%0D%0A%0D%0AThank%20you."><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M22 7l-10 6L2 7"/></svg> michaeljohnojoy26@gmail.com</a>
+              <span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1A19.5 19.5 0 0 1 5.2 13 19.8 19.8 0 0 1 2.1 4.4 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7A2 2 0 0 1 22 16.9z"/></svg> +63 962 765 2977</span>
+                            <span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Binangonan, Rizal, Philippines</span>
+            </div>
+            <div class="mini-stack">
+              <div class="mini-stat"><strong>7+</strong><span>Years IT</span></div>
+              <div class="mini-stat"><strong>L1/L2</strong><span>Support</span></div>
+              <div class="mini-stat"><strong>SLA</strong><span>Focused</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section aria-label="Career highlights">
+      <div class="container stats-grid">
+        <div class="stat-card fade-up"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4V8z"/><path d="M13 6v12"/></svg><strong>Incident Ready</strong><span>Experienced in tracking, resolving, and documenting incidents, service requests, and change requests.</span></div>
+        <div class="stat-card fade-up"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg><strong>Client Focused</strong><span>Strong client communication, stakeholder support, SLA compliance, and CSAT awareness.</span></div>
+        <div class="stat-card fade-up"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><path d="M14 4l-4 16"/></svg><strong>Dev Exposed</strong><span>Hands-on support for Java applications, Git, deployments, testing, and release activities.</span></div>
+        <div class="stat-card fade-up"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><strong>Ops Mindset</strong><span>Comfortable supporting Windows, macOS, Office 365, AD, VPN, DHCP, networks, and hardware.</span></div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <span class="section-kicker">Recruiter match</span>
+            <h3>Where I create value</h3>
+          </div>
+          <p class="section-copy">A practical mix of enterprise support, software troubleshooting, and end-user service that helps teams resolve issues faster.</p>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card fade-up">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M3 13h5"/><path d="M16 13h5"/><path d="M4 19l4-3"/><path d="M20 19l-4-3"/><path d="M4 7l4 3"/><path d="M20 7l-4 3"/><path d="M12 6V3"/></svg>
+            <h4>Application Troubleshooting</h4>
+            <p>Investigate production issues, analyze logs, reproduce defects, document findings, and coordinate with developers for resolution.</p>
+          </article>
+          <article class="focus-card fade-up">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 20h20"/><path d="M9 16h6"/></svg>
+            <h4>End-User & Infrastructure Support</h4>
+            <p>Resolve desktop, hardware, software, access, Office 365, AD, VPN, DHCP, and network-related requests.</p>
+          </article>
+          <article class="focus-card fade-up">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 12l2 2a3 3 0 0 0 4.2 0L20 8"/><path d="M14 10l2-2a3 3 0 0 1 4 0l1 1"/><path d="M4 12l4-4a3 3 0 0 1 4 0l1 1"/><path d="M3 16l3 3"/><path d="M21 16l-3 3"/></svg>
+            <h4>Client & Stakeholder Communication</h4>
+            <p>Provide clear ticket updates, manage expectations, support SLA compliance, and contribute to customer satisfaction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <span class="section-kicker">Skills recruiters search for</span>
+            <h3>Technical toolkit</h3>
+          </div>
+          <p class="section-copy">A balanced stack for IT operations, application support, user troubleshooting, and development team collaboration.</p>
+        </div>
+        <div class="skills-wrap">
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-8H6a2 2 0 0 0-2 2z"/><path d="M20 13v4a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2z"/><path d="M16 19c0 1.7-1.3 3-3 3h-2"/></svg></span><h4>IT & App Support</h4><p>L1/L2 support, enterprise apps, user assistance</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.3 4.1L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 4.1a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span><h4>Incident Management</h4><p>Service requests, problem/change process, RCA support</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><h4>Windows / macOS</h4><p>Desktop support, configuration, troubleshooting</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></span><h4>Office 365</h4><p>User support, productivity tools, access issues</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><h4>Active Directory</h4><p>User accounts, permissions, access support</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="3" y="16" width="6" height="6" rx="1"/><rect x="15" y="16" width="6" height="6" rx="1"/><path d="M12 8v4"/><path d="M6 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></span><h4>Networking</h4><p>VPN, DHCP, remote desktop, hardware support</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><h4>SQL & Logs</h4><p>Database checks, log analysis, issue investigation</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z"/><path d="M6 2v3"/><path d="M10 2v3"/><path d="M14 2v3"/></svg></span><h4>Java Support</h4><p>Java-based app support, defects, workarounds</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/><path d="M8.1 8.1l7.8 7.8"/></svg></span><h4>Git / GitHub</h4><p>Version control, collaboration, documentation</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4V8z"/><path d="M13 6v12"/></svg></span><h4>Jira / CRM Tools</h4><p>Ticketing, tracking, client updates, SLA notes</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 18l4 4"/><path d="M20 14v8h-8"/><path d="M8 6L4 2"/><path d="M4 10V2h8"/><path d="M14 4h3a3 3 0 0 1 3 3v3"/><path d="M10 20H7a3 3 0 0 1-3-3v-3"/></svg></span><h4>CI/CD Tools</h4><p>Build pipelines, deployments, release support, and delivery collaboration</p></div>
+          <div class="skill-card fade-up"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/><path d="M12 2a15 15 0 0 0 0 20"/></svg></span><h4>Web Basics</h4><p>Basic web development and content management</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <span class="section-kicker">Career timeline</span>
+            <h3>Professional experience</h3>
+          </div>
+          <p class="section-copy">A career path built around technical support, enterprise applications, systems troubleshooting, and software support collaboration.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item fade-up">
+            <div><span class="date-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg> Jul 2024 - Nov 2025</span></div>
+            <div class="job"><h4>Support Analyst</h4><p class="company">Broadridge - Makati, Philippines</p><ul><li>Provided L1/L2 application and technical support for enterprise clients while supporting SLA compliance and CSAT.</li><li>Managed incidents, service requests, change requests, Jira tickets, CRM records, and client updates.</li><li>Supported Java-based applications, FIX Protocol, and client-facing platforms.</li></ul></div>
+          </article>
+          <article class="timeline-item fade-up">
+            <div><span class="date-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg> Jul 2021 - Jan 2024</span></div>
+            <div class="job"><h4>Associate Software Engineer</h4><p class="company">Accenture - Philippines</p><ul><li>Supported and maintained enterprise applications in a production environment.</li><li>Investigated production defects and provided fixes, workarounds, testing, and post-release support.</li><li>Used Confluence and Git for documentation, collaboration, and knowledge sharing while assisting with deployments and release support.</li></ul></div>
+          </article>
+          <article class="timeline-item fade-up">
+            <div><span class="date-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg> Feb 2020 - Feb 2021</span></div>
+            <div class="job"><h4>Information Technology Technical Support</h4><p class="company">Unilab, Inc. - Philippines</p><ul><li>Delivered on-site IT support for hardware, software, network, CCTV, and security systems.</li><li>Handled incidents and service requests to reduce business downtime.</li><li>Assisted users with access, device configuration, and technical troubleshooting.</li></ul></div>
+          </article>
+          <article class="timeline-item fade-up">
+            <div><span class="date-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg> Apr 2019 - Sep 2019</span></div>
+            <div class="job"><h4>MIS Assistant Engineer</h4><p class="company">Yokogawa Philippines, Inc. - Philippines</p><ul><li>Provided internal technical and application support.</li><li>Supported Office 365, web content management, and basic web development tasks.</li><li>Documented procedures and assisted with system maintenance activities.</li></ul></div>
+          </article>
+          <article class="timeline-item fade-up">
+            <div><span class="date-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg> Jun 2018 - Jan 2019</span></div>
+            <div class="job"><h4>IT Site Support</h4><p class="company">EntraUSA Solutions Inc. - Philippines</p><ul><li>Supported Windows and macOS environments at site level.</li><li>Managed Active Directory user accounts, VPN access, DHCP, remote desktop, hardware, and network support.</li><li>Assisted with network administration and virtualization tasks.</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <span class="section-kicker">Education & credentials</span>
+            <h3>Training foundation</h3>
+          </div>
+        </div>
+
+        <div class="credential-layout">
+          <div class="panel fade-up">
+            <h4 class="panel-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg> Education</h4>
+            <div class="credential-list">
+              <article class="credential-card">
+                <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><path d="M14 4l-4 16"/></svg></span>
+                <div>
+                  <h4>Systems Developer Course</h4>
+                  <p>MFI Polytechnic Institute Inc. - focused on programming languages, database management, and systems development fundamentals.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel fade-up">
+            <h4 class="panel-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> Certifications</h4>
+            <div class="credential-list">
+              <article class="credential-card">
+                <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.5 19H7a5 5 0 1 1 1.4-9.8A7 7 0 0 1 22 12.5 3.5 3.5 0 0 1 17.5 19z"/></svg></span>
+                <div>
+                  <h4>Google Cloud Digital Leader</h4>
+                  <p>Cloud fundamentals credential supporting cloud-aware IT service, application support, and business technology discussions.</p>
+                </div>
+              </article>
+              <article class="credential-card">
+                <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.4 2.4-2.8-2.8 2.2-2.6z"/></svg></span>
+                <div>
+                  <h4>TESDA NC II - Computer Systems Servicing</h4>
+                  <p>Technical certification aligned with computer hardware, software, network, and systems servicing support.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Tools and technologies">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <span class="section-kicker">Keywords & tools</span>
+            <h3>Support stack</h3>
+          </div>
+        </div>
+        <div class="panel fade-up">
+          <div class="tech-cloud">
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-8H6a2 2 0 0 0-2 2z"/><path d="M20 13v4a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2z"/><path d="M16 19c0 1.7-1.3 3-3 3h-2"/></svg> IT Support</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4V8z"/><path d="M13 6v12"/></svg> Jira</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg> CRM Tools</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg> Office 365</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg> Active Directory</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg> Windows</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg> macOS</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="3" y="16" width="6" height="6" rx="1"/><rect x="15" y="16" width="6" height="6" rx="1"/><path d="M12 8v4"/><path d="M6 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg> VPN / DHCP</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg> SQL</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.3 4.1L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 4.1a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Log Analysis</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z"/><path d="M6 2v3"/><path d="M10 2v3"/><path d="M14 2v3"/></svg> Java</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/><path d="M8.1 8.1l7.8 7.8"/></svg> Git / GitHub</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 18l4 4"/><path d="M20 14v8h-8"/><path d="M8 6L4 2"/><path d="M4 10V2h8"/><path d="M14 4h3a3 3 0 0 1 3 3v3"/><path d="M10 20H7a3 3 0 0 1-3-3v-3"/></svg> CI/CD Tools</span>
+            <span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/><path d="M12 2a15 15 0 0 0 0 20"/></svg> Web Content Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container cta-card fade-up">
+        <div>
+          <h3 class="cta-title">Need an IT Support Specialist who understands software?</h3>
+          <p>I’m ready to support users, troubleshoot business applications, coordinate with developers, and help teams keep systems stable and reliable.</p>
+        </div>
+        <div class="hero-actions">
+          <a id="email-michael" class="btn btn-primary" href="mailto:michaeljohnojoy26@gmail.com?subject=Job%20Opportunity%20for%20Michael%20John%20Ojoy&body=Hi%20Michael%2C%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20IT%20Support%20%2F%20Development%20opportunity.%0D%0A%0D%0AThank%20you."><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Email Michael</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Michael John Ojoy. IT Support & Development Portfolio.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach((el, index) => {
+      el.style.transitionDelay = `${Math.min(index * 35, 220)}ms`;
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
